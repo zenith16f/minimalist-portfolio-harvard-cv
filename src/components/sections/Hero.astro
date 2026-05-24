@@ -1,0 +1,310 @@
+---
+import { basics } from "@cv-es";
+import Mail from "@/icons/Mail.astro";
+import Phone from "@/icons/Phone.astro";
+import LinkedIn from "@/icons/LinkedIn.astro";
+import GitHub from "@/icons/GitHub.astro";
+
+const { label, image, summary, profiles } = basics;
+
+const SOCIAL_ICONS: Record<string, any> = {
+  LinkedIn,
+  GitHub,
+};
+
+const linkedInfo = profiles.find(({ network }) => network === "LinkedIn");
+const linkedUrl = linkedInfo?.url;
+const githubInfo = profiles.find(({ network }) => network === "GitHub");
+const githubUrl = githubInfo?.url;
+const githubUser = githubInfo?.username;
+
+const name = import.meta.env.PUBLIC_PERSONAL_NAME;
+const email = import.meta.env.PUBLIC_PERSONAL_EMAIL;
+const phone = import.meta.env.PUBLIC_PERSONAL_NUMBER;
+const city = import.meta.env.PUBLIC_LOCATION_CITY;
+const region = import.meta.env.PUBLIC_LOCATION_REGION;
+---
+
+<section class="hero">
+  <div class="hero-text">
+    <span class="hero-label">{label}</span>
+    <h1>
+      {name.split(" ").slice(0, -1).join(" ")}{" "}
+      <em>{name.split(" ").slice(-1)[0]}</em>
+    </h1>
+    <p class="hero-summary">{basics.summary}</p>
+
+    <div class="hero-links no-print">
+      {
+        email && (
+          <a
+            href={`mailto:${email}`}
+            title={`Enviar email a ${name}`}
+          >
+            <Mail />
+            {email}
+          </a>
+        )
+      }
+      {
+        phone && (
+          <a
+            href={`tel:${phone.replace(/\s|-/g, "")}`}
+            title={`Llamar a ${name}`}
+          >
+            <Phone />
+            {phone}
+          </a>
+        )
+      }
+      {
+        profiles.map(({ network, url }) => {
+          const Icon = SOCIAL_ICONS[network];
+          return Icon ? (
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={network}
+            >
+              <Icon />
+              {network}
+            </a>
+          ) : null;
+        })
+      }
+    </div>
+
+    <div class="hero-print-contact print-only">
+      {email}
+      <span>·</span>
+      {phone}
+      <span>·</span>
+      {githubUrl?.replace("https://", "")}
+      <span>·</span>
+      {city}, {region}
+    </div>
+  </div>
+
+  {
+    image ? (
+      <figure>
+        <img
+          class="hero-photo no-print"
+          src={image}
+          alt={name}
+        />
+      </figure>
+    ) : (
+      <div
+        class="hero-photo-placeholder no-print"
+        id="heroPhoto"
+      >
+        foto
+        <br />
+        pendiente
+      </div>
+    )
+  }
+</section>
+
+<style>
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: start;
+    margin-bottom: 4rem;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .hero-text h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 5vw, 3.4rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-text h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-label {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+    display: block;
+  }
+
+  .hero-summary {
+    color: var(--text-secondary);
+    font-size: 1.02rem;
+    max-width: 520px;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-photo {
+    width: 130px;
+    height: 130px;
+    border-radius: 16px;
+    object-fit: cover;
+    border: 2px solid var(--border);
+    box-shadow: var(--shadow-md);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .hero-photo:hover {
+    transform: scale(1.04) rotate(-1deg);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .hero-photo-placeholder {
+    width: 130px;
+    height: 130px;
+    border-radius: 16px;
+    border: 2px dashed var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .hero-links {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 400;
+    padding: 0.4rem 0.85rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    transition: all 0.25s ease;
+  }
+
+  .hero-links a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    box-shadow: var(--shadow-sm);
+    transform: translateY(-1px);
+  }
+
+  .hero-links a :global(svg) {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+
+  .hero-print-contact {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+
+  /* ── Print overrides ── */
+  @media print {
+    .hero {
+      display: block !important;
+      text-align: center;
+      margin-bottom: 0.3cm;
+      padding-bottom: 0.25cm;
+      border-bottom: 2px solid #000;
+      animation: none;
+    }
+
+    .hero-photo,
+    .hero-photo-placeholder {
+      display: none !important;
+    }
+
+    .hero-text h1 {
+      font-family: "Times New Roman", serif;
+      font-size: 18pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.15cm;
+    }
+
+    .hero-text h1 em {
+      font-style: normal;
+      color: #000 !important;
+    }
+
+    .hero-label {
+      font-family: "Times New Roman", serif;
+      font-size: 10.5pt;
+      text-transform: none;
+      letter-spacing: 0;
+      color: #000 !important;
+      margin-bottom: 0.1cm;
+    }
+
+    .hero-summary {
+      display: none;
+    }
+
+    .hero-print-contact {
+      font-family: "Times New Roman", serif;
+      font-size: 9.5pt;
+      color: #333 !important;
+      text-align: center;
+      margin-top: 0.1cm;
+    }
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    .hero {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .hero-photo,
+    .hero-photo-placeholder {
+      margin: 0 auto 1rem;
+      width: 110px;
+      height: 110px;
+      order: -1;
+    }
+
+    .hero-summary {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-links {
+      justify-content: center;
+    }
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

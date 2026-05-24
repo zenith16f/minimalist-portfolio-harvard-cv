@@ -1,11 +1,74 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "@/layouts/Layout.astro";
+import ThemeToggle from "@/components/ThemeToggle.astro";
+import Hero from "@/components/sections/Hero.astro";
+import Education from "@/components/sections/Education.astro";
+import Experience from "@/components/sections/Experience.astro";
+import Projects from "@/components/sections/Projects.astro";
+import Skills from "@/components/sections/Skills.astro";
+import Languages from "@/components/sections/Languages.astro";
+import KeyboardManager from "@/components/KeyboardManager.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import { basics } from "@cv-es";
+const { name, label } = basics;
 ---
 
-<Layout>
-	<Welcome />
+<Layout title={`${name} — ${label}`}>
+  <ThemeToggle />
+  <main class="page-wrapper">
+    <Hero />
+    <Education />
+    <Experience />
+    <Projects />
+    <Skills />
+    <Languages />
+
+    <footer class="page-footer no-print">
+      <p class="text-center text-sm text-gray-500 dark:text-gray-400">
+        &copy; 2026. All rights reserved.
+      </p>
+    </footer>
+  </main>
+  <KeyboardManager />
 </Layout>
+
+<style>
+  .page-wrapper {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+  }
+
+  .page-footer {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-subtle);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    letter-spacing: 0.03em;
+  }
+
+  /* Staggered section animations */
+  .page-wrapper :global(section:nth-child(2)) {
+    animation-delay: 0.08s;
+  }
+  .page-wrapper :global(section:nth-child(3)) {
+    animation-delay: 0.16s;
+  }
+  .page-wrapper :global(section:nth-child(4)) {
+    animation-delay: 0.24s;
+  }
+  .page-wrapper :global(section:nth-child(5)) {
+    animation-delay: 0.32s;
+  }
+  .page-wrapper :global(section:nth-child(6)) {
+    animation-delay: 0.4s;
+  }
+
+  @media (max-width: 600px) {
+    .page-wrapper {
+      padding: 2.5rem 1.25rem 4rem;
+    }
+  }
+</style>
