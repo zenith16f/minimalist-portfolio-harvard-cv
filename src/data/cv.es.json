@@ -27,6 +27,20 @@
       }
     ]
   },
+  "education": [
+    {
+      "institution": "Escuela Superior de Cómputo — IPN",
+      "area": "Ingeniería en Sistemas Computacionales",
+      "startDate": "2024-02-02",
+      "endDate": null
+    },
+    {
+      "institution": "Centro de Estudios Científicos y Tecnológicos No. 9 — IPN",
+      "area": "Técnico en Programación",
+      "startDate": "2021-02-08",
+      "endDate": "2023-12-18"
+    }
+  ],
   "work": [
     {
       "name": "Company",
@@ -49,18 +63,7 @@
       "highlights": ["Awarded 'Volunteer of the Month'"]
     }
   ],
-  "education": [
-    {
-      "institution": "University",
-      "url": "https://institution.com/",
-      "area": "Software Development",
-      "studyType": "Bachelor",
-      "startDate": "2011-01-01",
-      "endDate": "2013-01-01",
-      "score": "4.0",
-      "courses": ["DB1101 - Basic SQL"]
-    }
-  ],
+
   "awards": [
     {
       "title": "Award",

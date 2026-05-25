@@ -10,10 +10,10 @@ import Languages from "@/components/sections/Languages.astro";
 import KeyboardManager from "@/components/KeyboardManager.astro";
 
 import { basics } from "@cv-es";
-const { name, label } = basics;
+const name = import.meta.env.PUBLIC_PERSONAL_NAME || basics.name;
 ---
 
-<Layout title={`${name} — ${label}`}>
+<Layout title={`${name} | Portolio`}>
   <ThemeToggle />
   <main class="page-wrapper">
     <Hero />
