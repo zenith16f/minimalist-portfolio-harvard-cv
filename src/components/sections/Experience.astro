@@ -1,1 +1,106 @@
-<h1>Experience</h1>
+---
+import Section from "@/components/Section.astro";
+import { work } from "@cv-es";
+---
+
+<Section
+  title="Experiencia"
+  num="02"
+>
+  {
+    work.map(({ name, startDate, endDate, position, summary }) => {
+      const startYear = new Date(startDate).getFullYear();
+      const endYear = endDate ? new Date(endDate).getFullYear() : "Presente";
+
+      return (
+        <div class="exp-item">
+          <div class="exp-header">
+            <div>
+              <span class="exp-role">{position}</span>
+              <span class="exp-company"> - {name}</span>
+            </div>
+            <span class="exp-date">
+              {startYear} - {endYear}
+            </span>
+          </div>
+          <p class="exp-desc">{summary}</p>
+        </div>
+      );
+    })
+  }
+</Section>
+
+<style>
+  .exp-item {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .exp-item:last-child {
+    border-bottom: none;
+  }
+
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .exp-role {
+    font-weight: 600;
+    font-size: 1.02rem;
+    color: var(--text-primary);
+  }
+
+  .exp-company {
+    color: var(--accent);
+    font-weight: 400;
+  }
+
+  .exp-date {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  .exp-desc {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+  }
+
+  @media print {
+    .exp-item {
+      padding: 0.15cm 0;
+      border-bottom: none;
+    }
+    .exp-header {
+      margin-bottom: 0.05cm;
+    }
+    .exp-role {
+      font-weight: 700;
+      font-size: 10.5pt;
+    }
+    .exp-company {
+      color: #000 !important;
+    }
+    .exp-date {
+      font-family: "Times New Roman", serif;
+      font-size: 10pt;
+      color: #333 !important;
+    }
+    .exp-desc {
+      font-size: 10pt;
+      color: #222 !important;
+    }
+  }
+
+  @media (max-width: 37.5rem) {
+    .exp-header {
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+  }
+</style>
