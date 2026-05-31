@@ -1,1 +1,86 @@
-<h1>Skills</h1>
+---
+import Section from "@/components/Section.astro";
+import { skills } from "@cv-es";
+---
+
+<Section
+  title="Habilidades"
+  num="04"
+>
+  <div class="skills-grid">
+    {
+      skills.map(({ name, keywords }) => (
+        <div class="skill-group">
+          <h3>{name}</h3>
+          <ul>
+            {keywords.map((keyword) => (
+              <li>{keyword}</li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+</Section>
+
+<style>
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .skill-group h3 {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+
+  .skill-group ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .skill-group li {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+
+  @media print {
+    .skills-grid {
+      display: block !important;
+      columns: 2;
+      column-gap: 1.5cm;
+    }
+
+    .skill-group {
+      break-inside: avoid;
+      margin-bottom: 0.2cm;
+    }
+
+    .skill-group h3 {
+      font-family: "Times New Roman", serif;
+      font-size: 10pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #000 !important;
+    }
+
+    .skill-group li {
+      font-size: 10pt;
+      color: #222 !important;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .skills-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>

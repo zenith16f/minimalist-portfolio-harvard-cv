@@ -1,1 +1,244 @@
-<h1>Projects</h1>
+---
+import Section from "@/components/Section.astro";
+import { projects } from "@cv-es";
+---
+
+<Section
+  title="Proyectos"
+  num="03"
+>
+  <div class="projects-grid">
+    {
+      projects.map(
+        ({
+          name,
+          description,
+          url,
+          highlights,
+          isActive,
+          languages,
+          keywords,
+          libraries,
+        }) => (
+          <article class="project-card">
+            <h3 class="project-name">
+              <a
+                href={url}
+                title={`Ver ${name}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {name}
+              </a>
+              {isActive && (
+                <span
+                  class="project-active"
+                  title="Activo"
+                />
+              )}
+            </h3>
+
+            <p class="project-desc">{description}</p>
+
+            <div class="project-highlights">
+              {highlights.map((highlight) => (
+                <div class="highlight">{highlight}</div>
+              ))}
+            </div>
+
+            <div class="project-tags">
+              {languages.map((tag) => (
+                <span class="tag">{tag}</span>
+              ))}
+
+              {libraries.map((tag) => (
+                <span class="tag">{tag}</span>
+              ))}
+
+              {keywords.map((tag) => (
+                <span class="tag">{tag}</span>
+              ))}
+            </div>
+          </article>
+        ),
+      )
+    }
+  </div>
+</Section>
+
+<style>
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1rem;
+  }
+
+  .project-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.4rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .project-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0.125rem;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+
+  .project-card:hover {
+    border-color: var(--accent);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .project-card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .project-name {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .project-name a {
+    color: var(--text-primary);
+  }
+
+  .project-name a:hover {
+    color: var(--accent);
+  }
+
+  .project-active {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #34c759;
+    display: inline-block;
+    box-shadow: 0 0 6px #34c75966;
+  }
+
+  .project-desc {
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    margin-bottom: 0.85rem;
+    line-height: 1.55;
+  }
+
+  .project-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .highlight {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    background: var(--highlight-bg);
+    color: var(--highlight-text);
+    font-weight: 500;
+  }
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .tag {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 5px;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+
+  @media print {
+    .projects-grid {
+      display: block !important;
+    }
+
+    .project-card {
+      background: none !important;
+      border: none !important;
+      border-radius: 0 !important;
+      padding: 0.12cm 0 !important;
+      page-break-inside: avoid;
+    }
+
+    .project-card::before {
+      display: none;
+    }
+
+    .project-active {
+      display: none !important;
+    }
+
+    .project-name {
+      font-family: "Times New Roman", serif;
+      font-size: 10.5pt;
+      font-weight: 700;
+    }
+
+    .project-name a {
+      color: #000 !important;
+    }
+
+    .project-desc {
+      font-size: 10pt;
+      color: #222 !important;
+      margin-bottom: 0.1cm;
+    }
+
+    .project-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.1cm;
+      margin-bottom: 0.1cm;
+    }
+
+    .highlight {
+      font-family: "Times New Roman", serif;
+      font-size: 8pt;
+      padding: 0.02cm 0.05cm;
+      border-radius: 4px;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .tag {
+      font-family: "Times New Roman", serif;
+      background: none !important;
+      border: 1px solid #999;
+      font-size: 8pt;
+      color: #333 !important;
+      padding: 0.05cm 0.15cm;
+    }
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

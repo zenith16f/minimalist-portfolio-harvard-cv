@@ -1,1 +1,75 @@
-<h1>Languages</h1>
+---
+import Section from "@/components/Section.astro";
+import { languages } from "@cv-es";
+---
+
+<Section
+  title="Idiomas"
+  num="05"
+>
+  <div class="meta-grid">
+    {
+      languages.map(({ language, fluency }) => (
+        <div class="meta-group">
+          <h3>{language}</h3>
+          <p>{fluency}</p>
+        </div>
+      ))
+    }
+  </div>
+</Section>
+
+<style>
+  .meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .meta-group h3 {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+
+  .meta-group p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+
+  @media print {
+    .meta-grid {
+      display: block;
+      columns: 2;
+    }
+
+    .meta-group {
+      break-inside: avoid;
+      margin-bottom: 0.2cm;
+    }
+
+    .meta-group h3 {
+      font-family: "Times New Roman", serif;
+      font-size: 10pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #000 !important;
+    }
+
+    .meta-group p {
+      font-size: 10pt;
+      color: #222 !important;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .meta-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+</style>

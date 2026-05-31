@@ -94,6 +94,16 @@
       "name": "Web Development",
       "level": "Master",
       "keywords": ["HTML", "CSS", "JavaScript"]
+    },
+    {
+      "name": "Web Development",
+      "level": "Master",
+      "keywords": ["HTML", "CSS", "JavaScript"]
+    },
+    {
+      "name": "Web Development",
+      "level": "Master",
+      "keywords": ["HTML", "CSS", "JavaScript"]
     }
   ],
   "languages": [
@@ -119,7 +129,38 @@
       "name": "Project",
       "startDate": "2019-01-01",
       "endDate": "2021-01-01",
+      "isActive": true,
       "description": "Description...",
+      "languages": ["JS"],
+      "keywords": ["API", "REST", "GraphQL"],
+      "libraries": ["React", "Angular", "Vue"],
+
+      "highlights": ["Won award at AIHacks 2016"],
+      "url": "https://project.com/"
+    },
+    {
+      "name": "Project",
+      "startDate": "2019-01-01",
+      "endDate": "2021-01-01",
+      "isActive": true,
+      "description": "Description...",
+      "languages": ["JS"],
+      "keywords": ["API", "REST", "GraphQL"],
+      "libraries": ["React", "Angular", "Vue"],
+
+      "highlights": ["Won award at AIHacks 2016"],
+      "url": "https://project.com/"
+    },
+    {
+      "name": "Project",
+      "startDate": "2019-01-01",
+      "endDate": "2021-01-01",
+      "isActive": true,
+      "description": "Description...",
+      "languages": ["JS"],
+      "keywords": ["API", "REST", "GraphQL"],
+      "libraries": ["React", "Angular", "Vue"],
+
       "highlights": ["Won award at AIHacks 2016"],
       "url": "https://project.com/"
     }
