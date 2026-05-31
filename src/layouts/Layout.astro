@@ -127,6 +127,14 @@ const { title } = Astro.props;
     --grain-opacity: 0.15;
   }
 
+  [data-theme="light"] .icon-moon {
+    display: none;
+  }
+
+  [data-theme="dark"] .icon-sun {
+    display: none;
+  }
+
   /* RESET & BASE*/
   *,
   *::before,
@@ -239,26 +247,9 @@ const { title } = Astro.props;
       margin: 0;
     }
 
-    section {
-      margin-bottom: 0.1cm;
-    }
-
-    /* ── Section titles ── */
-    .section-title {
-      font-family: "Times New Roman", Times, serif;
-      font-size: 12pt;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      border-bottom: 1px solid #000;
-      padding-bottom: 0.08cm;
-      margin-bottom: 0.3cm;
-      margin-top: 0.4cm;
-      page-break-after: avoid;
-    }
-
-    .section-title .num {
-      display: none;
+    article {
+      page-break-inside: avoid;
+      break-inside: avoid;
     }
   }
 </style>
