@@ -4,6 +4,7 @@ import Mail from "@/icons/Mail.astro";
 import Phone from "@/icons/Phone.astro";
 import LinkedIn from "@/icons/LinkedIn.astro";
 import GitHub from "@/icons/GitHub.astro";
+import { Image } from "astro:assets";
 
 const { label, image, summary, profiles } = basics;
 
@@ -89,10 +90,13 @@ const region = import.meta.env.PUBLIC_LOCATION_REGION;
   {
     image ? (
       <figure>
-        <img
+        <Image
           class="hero-photo no-print"
           src={image}
           alt={name}
+          width={300}
+          height={300}
+          loading="eager"
         />
       </figure>
     ) : (
