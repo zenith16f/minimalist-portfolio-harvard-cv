@@ -83,6 +83,11 @@
       "name": "Web Development",
       "icon": "globe",
       "description": "Construcción de sitios y aplicaciones web con tecnologías modernas"
+    },
+    {
+      "name": "UX / UI",
+      "icon": "palette",
+      "description": "Diseño de interfaces centradas en el usuario, prototipado y sistemas de diseño"
     }
   ],
   "projects": [
@@ -123,7 +128,11 @@
       "languages": ["TypeScript"],
       "keywords": [],
       "libraries": ["Astro"],
-      "highlights": [],
+      "highlights": [
+        "Transformación automática de portfolio web a CV formato Harvard mediante CSS @media print, sin generación de archivos separados",
+        "Implementación de command palette (ninja-keys) con navegación, acciones y atajos de teclado vía Ctrl+K",
+        "Sistema de temas claro/oscuro con CSS Custom Properties y persistencia en localStorage"
+      ],
       "url": "https://minimalist-portfolio-harvard-cv.vercel.app/"
     }
   ]
