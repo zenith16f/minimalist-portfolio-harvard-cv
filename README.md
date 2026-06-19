@@ -1,46 +1,85 @@
-# Astro Starter Kit: Basics
+# 🎓 Minimalist Portfolio — Harvard CV
 
-```sh
-pnpm create astro@latest -- --template basics
+A personal portfolio built with **Astro 5.x** that lives in two modes from a single codebase: a modern web portfolio on screen, and a clean Harvard-format CV when printed or exported to PDF.
+
+🔗 **Live:** [minimalist-portfolio-harvard-cv.vercel.app](https://minimalist-portfolio-harvard-cv.vercel.app)
+
+---
+
+## 👤 Author
+
+**Fernando** · [@zenith16f](https://github.com/zenith16f)
+
+---
+
+## ✨ Features
+
+- **Dual-mode design** — one codebase renders as an interactive portfolio on screen and reflows into a Harvard-format CV for print, via dedicated print stylesheets
+- **Command palette** — `Ctrl+K` powered by [ninja-keys](https://github.com/ssleert/ninja-keys) for fast navigation
+- **Editorial typography** — Instrument Serif, Source Serif 4, and JetBrains Mono, self-hosted as local WOFF2 files
+- **Light / dark theming** — amber/ochre accent palette across both modes
+- **`cv.json` single source of truth** — all content (experience, education, skills) lives in one JSON file, rendered into both the web view and the print layout
+
+---
+
+## 🏗️ Architecture
+
 ```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
+minimalist-portfolio-harvard-cv/
 ├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
+├── src/
+│   ├── assets/
+│   │   └── fonts/        # Local WOFF2 font files
+│   ├── components/
+│   ├── data/
+│   │   └── cv.json        # Single source of truth
+│   ├── layouts/
+│   ├── pages/
+│   └── styles/
+│       └── print.css      # Harvard CV print transformation
+├── astro.config.mjs
 └── package.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+The print transformation is handled entirely through CSS media queries — no separate template or build step is needed to generate the CV version.
 
-## 🧞 Commands
+---
 
-All commands are run from the root of the project, from a terminal:
+## 🧰 Tech Stack
 
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `pnpm install`         | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+![Astro](https://img.shields.io/badge/Astro-FF5D01?style=flat&logo=astro&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
 
-## 👀 Want to learn more?
+- **Astro 5.x** — static site generation
+- **ninja-keys** — command palette component
+- **Vercel** — deployment
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
+
+## 🚀 Getting Started
+
+```bash
+# Install dependencies
+pnpm install
+
+# Start local dev server
+pnpm dev
+
+# Build for production
+pnpm build
+
+# Preview production build
+pnpm preview
+```
+
+---
+
+## 📝 Customizing
+
+Most content updates only require editing `src/data/cv.json` — experience, education, and skills are pulled from there into both the web and print views. See the project documentation for a full architecture and modification guide.
+
+---
+
+## 📜 License
+
+MIT
