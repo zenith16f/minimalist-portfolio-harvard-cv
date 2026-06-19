@@ -10,6 +10,7 @@ import Languages from "@/components/sections/Languages.astro";
 import KeyboardManager from "@/components/KeyboardManager.astro";
 
 import { basics } from "@cv-es";
+import Interests from "@/components/sections/Interests.astro";
 const name = import.meta.env.PUBLIC_PERSONAL_NAME || basics.name;
 ---
 
@@ -22,6 +23,7 @@ const name = import.meta.env.PUBLIC_PERSONAL_NAME || basics.name;
     <Projects />
     <Skills />
     <Languages />
+    <Interests />
 
     <footer class="page-footer no-print">
       &copy; 2026. All rights reserved.

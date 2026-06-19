@@ -1,12 +1,10 @@
 {
   "basics": {
-    "name": "John Doe",
+    "name": "Fernando",
     "label": "Estudiante de Ingeniería en Sistemas Computacionales",
     "image": "https://i.pinimg.com/736x/e8/f8/28/e8f8281aa470a96a307631c6c082befd.jpg",
-    "email": "john@gmail.com",
-    "phone": "(912) 555-4321",
     "url": "https://johndoe.com",
-    "summary": "A summary of John Doe…",
+    "summary": "Estudiante de Sistemas Computacionales en ESCOM-IPN con interes en desarrollo de videojuegos y programación de sistemas. Apasionado por la programación de videojuegos, el desarrollo web y aprender continuamente nuevas tecnologías. Experiencia construyendo proyectos personales en C y JavaScript/TypeScript.",
     "location": {
       "address": "2712 Broadway St",
       "postalCode": "CA 94115",
@@ -43,13 +41,15 @@
   ],
   "work": [
     {
-      "name": "Company",
-      "position": "President",
-      "url": "https://company.com",
-      "startDate": "2013-01-01",
-      "endDate": "2014-01-01",
-      "summary": "Description…",
-      "highlights": ["Started the company"]
+      "name": "DevCreators",
+      "position": "Fullstack Web Developer",
+      "url": "",
+      "startDate": "2023-01-06",
+      "endDate": "2024-01-12",
+      "summary": "Desarrollo de una sistema distribuido con aplicacion web y movil, para la divulgación de eventos culturales en la Ciudad de México. Trabajo colaborativo en frontend y backend, implementación de buenas prácticas de seguridad.",
+      "highlights": [
+        "Realizacion de un sistema distribuido, donde se usaron dos API REST propias"
+      ]
     }
   ],
   "volunteer": [
@@ -91,30 +91,35 @@
   ],
   "skills": [
     {
-      "name": "Web Development",
-      "level": "Master",
-      "keywords": ["HTML", "CSS", "JavaScript"]
+      "name": "Lenguajes",
+      "keywords": ["C", "JavaScript", "Typescript", "C# (Aprendiendo)"]
     },
     {
-      "name": "Web Development",
-      "level": "Master",
-      "keywords": ["HTML", "CSS", "JavaScript"]
+      "name": "Frontend",
+      "keywords": ["HTML / CSS", "Astro", "Nextjs", "Node.js"]
     },
     {
-      "name": "Web Development",
-      "level": "Master",
-      "keywords": ["HTML", "CSS", "JavaScript"]
+      "name": "Herramientas",
+      "keywords": ["Git / Github", "Vercel", "Figma"]
     }
   ],
   "languages": [
     {
-      "language": "English",
-      "fluency": "Native speaker"
+      "language": "Español",
+      "fluency": "Nativo"
+    },
+    {
+      "language": "Ingles",
+      "fluency": "Intermedio - Avanzado"
     }
   ],
   "interests": [
     {
-      "name": "Wildlife",
+      "name": "Game Development",
+      "keywords": ["Ferrets", "Unicorns"]
+    },
+    {
+      "name": "Web Development",
       "keywords": ["Ferrets", "Unicorns"]
     }
   ],
@@ -126,43 +131,42 @@
   ],
   "projects": [
     {
-      "name": "Project",
+      "name": "Tetris en C",
       "startDate": "2019-01-01",
-      "endDate": "2021-01-01",
+      "endDate": null,
       "isActive": true,
-      "description": "Description...",
-      "languages": ["JS"],
-      "keywords": ["API", "REST", "GraphQL"],
-      "libraries": ["React", "Angular", "Vue"],
+      "description": "Implementación de Tetris en terminal usando ncurses. Arquitectura con separación estricta entre lógica de juego y renderizado. Sistema de gravedad por niveles, scoring con bonus back-to-back, hold piece y ghost piece.",
+      "languages": ["C"],
+      "keywords": [],
+      "libraries": ["ncurses"],
 
-      "highlights": ["Won award at AIHacks 2016"],
+      "highlights": [],
       "url": "https://project.com/"
     },
     {
-      "name": "Project",
-      "startDate": "2019-01-01",
-      "endDate": "2021-01-01",
-      "isActive": true,
-      "description": "Description...",
-      "languages": ["JS"],
-      "keywords": ["API", "REST", "GraphQL"],
-      "libraries": ["React", "Angular", "Vue"],
+      "name": "Ramble",
+      "startDate": "2023-01-01",
+      "endDate": "2024-01-12",
+      "isActive": false,
+      "description": "Sistema distribuido para la divulgación de eventos culturales en la Ciudad de México. Los usuarios pueden precotizar, guardar y ver la localización de los eventos.",
+      "languages": ["TS", "Python"],
+      "keywords": ["API", "REST", "MySQL"],
+      "libraries": ["Nextjs", "Nest", "Expo"],
 
-      "highlights": ["Won award at AIHacks 2016"],
-      "url": "https://project.com/"
+      "highlights": [],
+      "url": ""
     },
     {
-      "name": "Project",
+      "name": "Minimalist Portfolio",
       "startDate": "2019-01-01",
-      "endDate": "2021-01-01",
+      "endDate": null,
       "isActive": true,
-      "description": "Description...",
+      "description": "",
       "languages": ["JS"],
-      "keywords": ["API", "REST", "GraphQL"],
-      "libraries": ["React", "Angular", "Vue"],
-
-      "highlights": ["Won award at AIHacks 2016"],
-      "url": "https://project.com/"
+      "keywords": [],
+      "libraries": ["Astro"],
+      "highlights": [],
+      "url": "https://minimalist-portfolio-harvard-cv.vercel.app/"
     }
   ]
 }
