@@ -3,14 +3,11 @@
     "name": "Fernando",
     "label": "Estudiante de Ingeniería en Sistemas Computacionales",
     "image": "https://i.pinimg.com/736x/e8/f8/28/e8f8281aa470a96a307631c6c082befd.jpg",
-    "url": "https://johndoe.com",
-    "summary": "Estudiante de Sistemas Computacionales en ESCOM-IPN con interes en desarrollo de videojuegos y programación de sistemas. Apasionado por la programación de videojuegos, el desarrollo web y aprender continuamente nuevas tecnologías. Experiencia construyendo proyectos personales en C y JavaScript/TypeScript.",
+    "url": "https://github.com/zenith16f",
+    "summary": "Estudiante de Sistemas Computacionales en ESCOM-IPN con interés en desarrollo de videojuegos y programación de sistemas. Apasionado por la programación de videojuegos, el desarrollo web y aprender continuamente nuevas tecnologías. Experiencia construyendo proyectos personales en C y JavaScript/TypeScript.",
     "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
-      "countryCode": "US",
-      "region": "California"
+      "city": "CDMX",
+      "region": "Ciudad de México"
     },
     "profiles": [
       {
@@ -21,7 +18,7 @@
       {
         "network": "LinkedIn",
         "username": "Fernando Guzmán",
-        "url": "https://www.linkedin.com/in/fernando-guzmán-350847411/?isSelfProfile=true"
+        "url": "https://www.linkedin.com/in/fernando-guzmán-350847411/"
       }
     ]
   },
@@ -46,61 +43,24 @@
       "url": "",
       "startDate": "2023-01-06",
       "endDate": "2024-01-12",
-      "summary": "Desarrollo de una sistema distribuido con aplicacion web y movil, para la divulgación de eventos culturales en la Ciudad de México. Trabajo colaborativo en frontend y backend, implementación de buenas prácticas de seguridad.",
+      "summary": "Desarrollo de un sistema distribuido con aplicación web y móvil para la divulgación de eventos culturales en la Ciudad de México. Trabajo colaborativo en frontend y backend con implementación de buenas prácticas de seguridad.",
       "highlights": [
-        "Realizacion de un sistema distribuido, donde se usaron dos API REST propias"
+        "Realización de un sistema distribuido utilizando dos API REST propias"
       ]
-    }
-  ],
-  "volunteer": [
-    {
-      "organization": "Organization",
-      "position": "Volunteer",
-      "url": "https://organization.com/",
-      "startDate": "2012-01-01",
-      "endDate": "2013-01-01",
-      "summary": "Description…",
-      "highlights": ["Awarded 'Volunteer of the Month'"]
-    }
-  ],
-
-  "awards": [
-    {
-      "title": "Award",
-      "date": "2014-11-01",
-      "awarder": "Company",
-      "summary": "There is no spoon."
-    }
-  ],
-  "certificates": [
-    {
-      "name": "Certificate",
-      "date": "2021-11-07",
-      "issuer": "Company",
-      "url": "https://certificate.com"
-    }
-  ],
-  "publications": [
-    {
-      "name": "Publication",
-      "publisher": "Company",
-      "releaseDate": "2014-10-01",
-      "url": "https://publication.com",
-      "summary": "Description…"
     }
   ],
   "skills": [
     {
       "name": "Lenguajes",
-      "keywords": ["C", "JavaScript", "Typescript", "C# (Aprendiendo)"]
+      "keywords": ["C", "JavaScript", "TypeScript", "C# (Aprendiendo)"]
     },
     {
       "name": "Frontend",
-      "keywords": ["HTML / CSS", "Astro", "Nextjs", "Node.js"]
+      "keywords": ["HTML / CSS", "Astro", "Next.js", "Node.js"]
     },
     {
       "name": "Herramientas",
-      "keywords": ["Git / Github", "Vercel", "Figma"]
+      "keywords": ["Git / GitHub", "Vercel", "Figma", "VS Code"]
     }
   ],
   "languages": [
@@ -109,24 +69,20 @@
       "fluency": "Nativo"
     },
     {
-      "language": "Ingles",
+      "language": "Inglés",
       "fluency": "Intermedio - Avanzado"
     }
   ],
   "interests": [
     {
       "name": "Game Development",
-      "keywords": ["Ferrets", "Unicorns"]
+      "icon": "gamepad",
+      "description": "Diseño e implementación de mecánicas de juego, game loops y renderizado"
     },
     {
       "name": "Web Development",
-      "keywords": ["Ferrets", "Unicorns"]
-    }
-  ],
-  "references": [
-    {
-      "name": "Jane Doe",
-      "reference": "Reference…"
+      "icon": "globe",
+      "description": "Construcción de sitios y aplicaciones web con tecnologías modernas"
     }
   ],
   "projects": [
@@ -135,34 +91,36 @@
       "startDate": "2019-01-01",
       "endDate": null,
       "isActive": true,
-      "description": "Implementación de Tetris en terminal usando ncurses. Arquitectura con separación estricta entre lógica de juego y renderizado. Sistema de gravedad por niveles, scoring con bonus back-to-back, hold piece y ghost piece.",
+      "description": "Implementación completa de Tetris para terminal construida desde cero con la librería ncurses. El proyecto sigue una arquitectura modular con separación estricta entre la lógica del juego y el renderizado, lo que permite modificar la interfaz sin alterar las reglas de juego. Incluye sistema de gravedad progresiva por niveles, puntuación con bonus back-to-back por Tetris consecutivos, mecánica de hold piece para reservar piezas y ghost piece para previsualizar el aterrizaje.",
       "languages": ["C"],
       "keywords": [],
       "libraries": ["ncurses"],
-
-      "highlights": [],
-      "url": "https://project.com/"
+      "highlights": [
+        "Gestión manual de memoria para el procesamiento de assets y estructuración de un proyecto en C con múltiples archivos y headers"
+      ],
+      "url": "https://github.com/zenith16f/SmallProjects/tree/zenith/Tetris%20Clone"
     },
     {
       "name": "Ramble",
       "startDate": "2023-01-01",
       "endDate": "2024-01-12",
       "isActive": false,
-      "description": "Sistema distribuido para la divulgación de eventos culturales en la Ciudad de México. Los usuarios pueden precotizar, guardar y ver la localización de los eventos.",
-      "languages": ["TS", "Python"],
-      "keywords": ["API", "REST", "MySQL"],
-      "libraries": ["Nextjs", "Nest", "Expo"],
-
-      "highlights": [],
+      "description": "Sistema distribuido desarrollado como proyecto escolar para la divulgación de eventos culturales en la Ciudad de México. Los usuarios pueden consultar, precotizar y guardar eventos, además de visualizar su ubicación en un mapa. Mi rol principal fue el desarrollo del frontend web y la construcción de dos API REST con NestJS, consumidas tanto por la aplicación web como por la versión móvil en Expo.",
+      "languages": ["TypeScript", "Python"],
+      "keywords": ["API REST", "MySQL"],
+      "libraries": ["Next.js", "NestJS", "Expo"],
+      "highlights": [
+        "Persistencia de datos unificada que garantiza la consistencia de la información entre las versiones web y móvil"
+      ],
       "url": ""
     },
     {
       "name": "Minimalist Portfolio",
-      "startDate": "2019-01-01",
+      "startDate": "2025-01-01",
       "endDate": null,
       "isActive": true,
-      "description": "",
-      "languages": ["JS"],
+      "description": "Portfolio y CV personal construido con Astro como sitio estático. Implementa un sistema dual de visualización: en pantalla funciona como portfolio moderno con tema claro/oscuro y command palette, mientras que al imprimir se transforma automáticamente en un CV con formato Harvard mediante CSS @media print. Fuentes tipográficas servidas localmente en formato WOFF2.",
+      "languages": ["TypeScript"],
       "keywords": [],
       "libraries": ["Astro"],
       "highlights": [],
