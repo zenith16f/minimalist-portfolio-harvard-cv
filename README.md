@@ -15,7 +15,7 @@ A personal portfolio built with **Astro 5.x** that lives in two modes from a sin
 ## ✨ Features
 
 - **Dual-mode design** — one codebase renders as an interactive portfolio on screen and reflows into a Harvard-format CV for print, via dedicated print stylesheets
-- **Command palette** — `Ctrl+K` powered by [ninja-keys](https://github.com/ssleert/ninja-keys) for fast navigation
+- **Command palette** — `Ctrl+K` powered by [ninja-keys](https://github.com/ssleptsov/ninja-keys) for fast navigation
 - **Editorial typography** — Instrument Serif, Source Serif 4, and JetBrains Mono, self-hosted as local WOFF2 files
 - **Light / dark theming** — amber/ochre accent palette across both modes
 - **`cv.json` single source of truth** — all content (experience, education, skills) lives in one JSON file, rendered into both the web view and the print layout
